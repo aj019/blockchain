@@ -185,23 +185,25 @@ function    doGetNodeStatus()  {
 
 function    doGetSyncStatus(){
 console.log("Func called");
-web3.eth.isSyncing(function(error, sync){
-    if(!error) {
-        // stop all app activity
-        if(sync === true) {
-           // we use `true`, so it stops all filters, but not the web3.eth.syncing polling
-           web3.reset(true);
-
-        // show sync info
-        } else if(sync) {
-           console.log(sync.currentBlock);
-
-        // re-gain app operation
-        } else {
-            // run your app init function...
-        }
+  web3.eth.getSyncing(function(err,data){
+    console.log("Callback");
+    if(err){
+      setData('get_sync_status',err,true);
+    }else{
+      setData('get_sync_status','Sync Status: '+ data,false);
     }
-});
+  });
+}
+
+function doGetMiningStatus(){
+  console.log("Func called");
+  web3.eth.getMining(function(err,data){
+    if(err){
+      setData('get_mine_status',err,true);
+    }else{
+      setData('get_mine_status','Mining Status: '+ data,false);
+    }
+  });
 }
 
 /**
