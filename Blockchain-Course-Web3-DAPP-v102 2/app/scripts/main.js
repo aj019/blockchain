@@ -567,9 +567,15 @@ function    doContractFunctionCall()  {
 
         // MetaMask does not allow synchronous call to 'call' for non-constant function
         // Change this to asynchronous :)
-        var value = instance.setNum.call(parameterValue);
+        instance.setNum.call(parameterValue,web3.eth.defaultBlock,function(error,result){
+          if(error){
+            console.log(error);
+          }else{
+          setExecuteResultUI('Call',funcName,parameterValue,result,'',false);
+          }
+        });
 
-        setExecuteResultUI('Call',funcName,parameterValue,value,'',false);
+
     } else {
 
         instance.getNum.call({},web3.eth.defaultBlock, function(error,result){
@@ -711,6 +717,7 @@ function    doFilterGetLogs()  {
         } else {
             // result = array of events
             // Update UI with the data received as an array of events
+            console.log('Array of events '+ result);
             setData('get_log_count',result.length, false);
             for(var i = 0; i < result.length ; i++){
                 //console.log("Event.watch="+JSON.stringify(result[i]))
