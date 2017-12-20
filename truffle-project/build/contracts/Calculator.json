@@ -2,18 +2,18 @@
   "contractName": "Calculator",
   "abi": [
     {
+      "constant": false,
       "inputs": [
         {
           "name": "num",
           "type": "uint256"
         }
       ],
+      "name": "addToNumber",
+      "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function",
-      "constant": false,
-      "name": "addToNumber",
-      "outputs": []
+      "type": "function"
     },
     {
       "constant": false,
@@ -24,6 +24,15 @@
         }
       ],
       "name": "substractNumber",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "double",
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
@@ -72,24 +81,33 @@
       "type": "function"
     },
     {
+      "constant": false,
+      "inputs": [],
+      "name": "half",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "inputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "constructor"
     }
   ],
-  "bytecode": "0x6060604052600a600055341561001457600080fd5b6101ad806100236000396000f30060606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306ccd230146100725780630b7e4e7f14610095578063b4679b06146100b8578063de292789146100db578063f5cb911d14610104575b600080fd5b341561007d57600080fd5b6100936004808035906020019091905050610127565b005b34156100a057600080fd5b6100b66004808035906020019091905050610139565b005b34156100c357600080fd5b6100d9600480803590602001909190505061014b565b005b34156100e657600080fd5b6100ee61015d565b6040518082815260200191505060405180910390f35b341561010f57600080fd5b6101256004808035906020019091905050610166565b005b80600080828254019250508190555050565b80600080828254039250508190555050565b80600080828254029250508190555050565b60008054905090565b8060008082825481151561017657fe5b0492505081905550505600a165627a7a723058209df0b836e9fc6a21f06117e54532b0dfa0fa2152e81f9768317800ed69528f2b0029",
-  "deployedBytecode": "0x60606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306ccd230146100725780630b7e4e7f14610095578063b4679b06146100b8578063de292789146100db578063f5cb911d14610104575b600080fd5b341561007d57600080fd5b6100936004808035906020019091905050610127565b005b34156100a057600080fd5b6100b66004808035906020019091905050610139565b005b34156100c357600080fd5b6100d9600480803590602001909190505061014b565b005b34156100e657600080fd5b6100ee61015d565b6040518082815260200191505060405180910390f35b341561010f57600080fd5b6101256004808035906020019091905050610166565b005b80600080828254019250508190555050565b80600080828254039250508190555050565b80600080828254029250508190555050565b60008054905090565b8060008082825481151561017657fe5b0492505081905550505600a165627a7a723058209df0b836e9fc6a21f06117e54532b0dfa0fa2152e81f9768317800ed69528f2b0029",
-  "sourceMap": "25:605:0:-;;;126:2;114:14;;133:47;;;;;;;;25:605;;;;;;",
-  "deployedSourceMap": "25:605:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;298:56;;;;;;;;;;;;;;;;;;;;;;;;;;385:60;;;;;;;;;;;;;;;;;;;;;;;;;;476:62;;;;;;;;;;;;;;;;;;;;;;;;;;208:59;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;569:58;;;;;;;;;;;;;;;;;;;;;;;;;;298:56;346:3;336:6;;:13;;;;;;;;;;;298:56;:::o;385:60::-;437:3;427:6;;:13;;;;;;;;;;;385:60;:::o;476:62::-;530:3;520:6;;:13;;;;;;;;;;;476:62;:::o;208:59::-;238:4;256:6;;249:13;;208:59;:::o;569:58::-;619:3;609:6;;:13;;;;;;;;;;;;;;;;;;569:58;:::o",
-  "source": "pragma solidity ^0.4.6;\n\ncontract Calculator {\n\n  // Result of the operation are always stored in this variable\n  uint result=10;\n\n  function Calculator() {\n    // constructor\n\n  }\n\n  // returns the result\n  function getResult() returns (uint){\n    return result;\n  }\n\n  // result = result + num\n  function addToNumber(uint num)  {\n    result += num;\n  }\n\n  // result = result - num\n  function substractNumber(uint num)  {\n    result -= num;\n  }\n\n  // result = result * num\n  function multiplyWithNumber(uint num) {\n    result *= num;\n  }\n\n  // result = result / num\n  function divideByNumber(uint num) {\n    result /= num;\n  }\n\n}\n",
+  "bytecode": "0x6060604052600a600055341561001457600080fd5b61021a806100236000396000f300606060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306ccd230146100885780630b7e4e7f146100ab5780638fdb7189146100ce578063b4679b06146100e3578063de29278914610106578063f5cb911d1461012f578063f6a6462c14610152575b600080fd5b341561009357600080fd5b6100a96004808035906020019091905050610167565b005b34156100b657600080fd5b6100cc6004808035906020019091905050610179565b005b34156100d957600080fd5b6100e161018b565b005b34156100ee57600080fd5b610104600480803590602001909190505061019d565b005b341561011157600080fd5b6101196101af565b6040518082815260200191505060405180910390f35b341561013a57600080fd5b61015060048080359060200190919050506101b8565b005b341561015d57600080fd5b6101656101d3565b005b80600080828254019250508190555050565b80600080828254039250508190555050565b60026000808282540292505081905550565b80600080828254029250508190555050565b60008054905090565b806000808282548115156101c857fe5b049250508190555050565b60026000808282548115156101e457fe5b04925050819055505600a165627a7a72305820bf75e32cd53720fcdf491d0e6504eafe7c0ed512c2c25c1f5a5d304afcaca8080029",
+  "deployedBytecode": "0x606060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306ccd230146100885780630b7e4e7f146100ab5780638fdb7189146100ce578063b4679b06146100e3578063de29278914610106578063f5cb911d1461012f578063f6a6462c14610152575b600080fd5b341561009357600080fd5b6100a96004808035906020019091905050610167565b005b34156100b657600080fd5b6100cc6004808035906020019091905050610179565b005b34156100d957600080fd5b6100e161018b565b005b34156100ee57600080fd5b610104600480803590602001909190505061019d565b005b341561011157600080fd5b6101196101af565b6040518082815260200191505060405180910390f35b341561013a57600080fd5b61015060048080359060200190919050506101b8565b005b341561015d57600080fd5b6101656101d3565b005b80600080828254019250508190555050565b80600080828254039250508190555050565b60026000808282540292505081905550565b80600080828254029250508190555050565b60008054905090565b806000808282548115156101c857fe5b049250508190555050565b60026000808282548115156101e457fe5b04925050819055505600a165627a7a72305820bf75e32cd53720fcdf491d0e6504eafe7c0ed512c2c25c1f5a5d304afcaca8080029",
+  "sourceMap": "25:688:0:-;;;126:2;114:14;;133:47;;;;;;;;25:688;;;;;;",
+  "deployedSourceMap": "25:688:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;298:56;;;;;;;;;;;;;;;;;;;;;;;;;;385:60;;;;;;;;;;;;;;;;;;;;;;;;;;631:39;;;;;;;;;;;;;;476:62;;;;;;;;;;;;;;;;;;;;;;;;;;208:59;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;569:58;;;;;;;;;;;;;;;;;;;;;;;;;;674:37;;;;;;;;;;;;;;298:56;346:3;336:6;;:13;;;;;;;;;;;298:56;:::o;385:60::-;437:3;427:6;;:13;;;;;;;;;;;385:60;:::o;631:39::-;664:1;654:6;;:11;;;;;;;;;;;631:39::o;476:62::-;530:3;520:6;;:13;;;;;;;;;;;476:62;:::o;208:59::-;238:4;256:6;;249:13;;208:59;:::o;569:58::-;619:3;609:6;;:13;;;;;;;;;;;;;;;;;;569:58;:::o;674:37::-;705:1;695:6;;:11;;;;;;;;;;;;;;;;;;674:37::o",
+  "source": "pragma solidity ^0.4.6;\n\ncontract Calculator {\n\n  // Result of the operation are always stored in this variable\n  uint result=10;\n\n  function Calculator() {\n    // constructor\n\n  }\n\n  // returns the result\n  function getResult() returns (uint){\n    return result;\n  }\n\n  // result = result + num\n  function addToNumber(uint num)  {\n    result += num;\n  }\n\n  // result = result - num\n  function substractNumber(uint num)  {\n    result -= num;\n  }\n\n  // result = result * num\n  function multiplyWithNumber(uint num) {\n    result *= num;\n  }\n\n  // result = result / num\n  function divideByNumber(uint num) {\n    result /= num;\n  }\n\n  function double(){\n    result *= 2;\n  }\n\n  function half(){\n    result /= 2;\n  }\n}\n",
   "sourcePath": "/Users/anujgupta/blockchain/truffle-project/contracts/Calculator.sol",
   "ast": {
     "attributes": {
       "absolutePath": "/Users/anujgupta/blockchain/truffle-project/contracts/Calculator.sol",
       "exportedSymbols": {
         "Calculator": [
-          57
+          73
         ]
       }
     },
@@ -119,49 +137,34 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            57
+            73
           ],
           "name": "Calculator",
-          "scope": 58
+          "scope": 74
         },
         "children": [
           {
             "attributes": {
               "constant": false,
-              "implemented": true,
-              "isConstructor": true,
-              "modifiers": [
-                null
-              ],
               "name": "result",
-              "payable": false,
-              "scope": 57,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "internal",
+              "scope": 73,
               "stateVariable": true,
               "storageLocation": "default",
-              "type": "uint256"
+              "type": "uint256",
+              "visibility": "internal"
             },
             "children": [
               {
                 "attributes": {
-                  "parameters": [
-                    null
-                  ],
                   "name": "uint",
                   "type": "uint256"
                 },
-                "children": [],
                 "id": 2,
                 "name": "ElementaryTypeName",
                 "src": "114:4:0"
               },
               {
                 "attributes": {
-                  "parameters": [
-                    null
-                  ],
                   "argumentTypes": null,
                   "hexvalue": "3130",
                   "isConstant": false,
@@ -173,21 +176,9 @@
                   "type": "int_const 10",
                   "value": "10"
                 },
-                "children": [],
                 "id": 3,
                 "name": "Literal",
                 "src": "126:2:0"
-              },
-              {
-                "attributes": {
-                  "statements": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 4,
-                "name": "Block",
-                "src": "71:24:0"
               }
             ],
             "id": 4,
@@ -204,7 +195,7 @@
               ],
               "name": "Calculator",
               "payable": false,
-              "scope": 57,
+              "scope": 73,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -258,7 +249,7 @@
               ],
               "name": "getResult",
               "payable": false,
-              "scope": 57,
+              "scope": 73,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -354,7 +345,7 @@
               ],
               "name": "addToNumber",
               "payable": false,
-              "scope": 57,
+              "scope": 73,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -477,7 +468,7 @@
               ],
               "name": "substractNumber",
               "payable": false,
-              "scope": 57,
+              "scope": 73,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -600,7 +591,7 @@
               ],
               "name": "multiplyWithNumber",
               "payable": false,
-              "scope": 57,
+              "scope": 73,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -723,7 +714,7 @@
               ],
               "name": "divideByNumber",
               "payable": false,
-              "scope": 57,
+              "scope": 73,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -835,33 +826,236 @@
             "id": 56,
             "name": "FunctionDefinition",
             "src": "569:58:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "double",
+              "payable": false,
+              "scope": 73,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 57,
+                "name": "ParameterList",
+                "src": "646:2:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 58,
+                "name": "ParameterList",
+                "src": "648:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "*=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4,
+                              "type": "uint256",
+                              "value": "result"
+                            },
+                            "id": 59,
+                            "name": "Identifier",
+                            "src": "654:6:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "32",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 2",
+                              "value": "2"
+                            },
+                            "id": 60,
+                            "name": "Literal",
+                            "src": "664:1:0"
+                          }
+                        ],
+                        "id": 61,
+                        "name": "Assignment",
+                        "src": "654:11:0"
+                      }
+                    ],
+                    "id": 62,
+                    "name": "ExpressionStatement",
+                    "src": "654:11:0"
+                  }
+                ],
+                "id": 63,
+                "name": "Block",
+                "src": "648:22:0"
+              }
+            ],
+            "id": 64,
+            "name": "FunctionDefinition",
+            "src": "631:39:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "half",
+              "payable": false,
+              "scope": 73,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 65,
+                "name": "ParameterList",
+                "src": "687:2:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 66,
+                "name": "ParameterList",
+                "src": "689:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "/=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4,
+                              "type": "uint256",
+                              "value": "result"
+                            },
+                            "id": 67,
+                            "name": "Identifier",
+                            "src": "695:6:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "32",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 2",
+                              "value": "2"
+                            },
+                            "id": 68,
+                            "name": "Literal",
+                            "src": "705:1:0"
+                          }
+                        ],
+                        "id": 69,
+                        "name": "Assignment",
+                        "src": "695:11:0"
+                      }
+                    ],
+                    "id": 70,
+                    "name": "ExpressionStatement",
+                    "src": "695:11:0"
+                  }
+                ],
+                "id": 71,
+                "name": "Block",
+                "src": "689:22:0"
+              }
+            ],
+            "id": 72,
+            "name": "FunctionDefinition",
+            "src": "674:37:0"
           }
         ],
-        "id": 57,
+        "id": 73,
         "name": "ContractDefinition",
-        "src": "25:605:0"
+        "src": "25:688:0"
       }
     ],
-    "id": 58,
+    "id": 74,
     "name": "SourceUnit",
-    "src": "0:631:0"
+    "src": "0:714:0"
   },
   "compiler": {
     "name": "solc",
     "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
   },
   "networks": {
-    "1513294159928": {
-      "events": {},
-      "links": {},
-      "address": "0xf8921f4d784d72f7ee8dbc153e9e3a6f6d10a701"
-    },
     "1513496858562": {
       "events": {},
       "links": {},
-      "address": "0xfbcd5ebc7708e6568fb47c31ff51d06405d0995c"
+      "address": "0xff9ee6389e4ae76558fe996ecca630ee30b995c7"
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2017-12-17T07:50:30.282Z"
+  "updatedAt": "2017-12-17T08:22:57.311Z"
 }
